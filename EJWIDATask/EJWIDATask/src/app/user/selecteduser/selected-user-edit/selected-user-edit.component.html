@@ -1,0 +1,65 @@
+<div class="row bg-light border border-secondary rounded pl-5">
+
+  <div class="col-md-10">
+    <form>
+      <div class="form-group">
+        <label for="editName">Name</label>
+        <input type="Name" name="name" class="form-control" id="editName" aria-describedby="editHelp"
+          placeholder="Enter name" [(ngModel)]="currentUser.name">
+      </div>
+      <div class="form-group">
+        <label for="editemail">Email</label>
+        <input type="email" name="email" class="form-control" id="editemail" aria-describedby="editHelp"
+          placeholder="Enter email" [(ngModel)]="currentUser.email">
+      </div>
+      <div class="form-group">
+        <label for="editcompanyname">Company name</label>
+        <input type="companyname" name="companyname" class="form-control" id="editcompanyname"
+          aria-describedby="editHelp" placeholder="Enter companyname" [(ngModel)]="currentUser.company.name">
+      </div>
+      <div class="form-group">
+        <label for="editphone">Phone</label>
+        <input type="phone" name="phone" class="form-control" id="editphone" aria-describedby="editHelp"
+          placeholder="Enter phone" [(ngModel)]="currentUser.phone">
+      </div>
+      <h5>Address: </h5>
+      <div class="form-group">
+        <label for="editstreet">Street</label>
+        <input type="street" name="street" class="form-control" id="editstreet" aria-describedby="editHelp"
+          placeholder="Enter street" [(ngModel)]="currentUser.address.street">
+      </div>
+      <div class="form-group">
+        <label for="editsuite">Suite</label>
+        <input type="suite" name="suite" class="form-control" id="editsuite" aria-describedby="editHelp"
+          placeholder="Enter suite" [(ngModel)]="currentUser.address.suite">
+      </div>
+      <div class="form-group">
+        <label for="editcity">City</label>
+        <input type="city" name="city" class="form-control" id="editcity" aria-describedby="editHelp"
+          placeholder="Enter city" [(ngModel)]="currentUser.address.city">
+      </div>
+      <div class="form-group">
+        <label for="editzipcode">Zipcode</label>
+        <input type="zipcode" name="zipcode" class="form-control" id="editzipcode" aria-describedby="editHelp"
+          placeholder="Enter zipcode" [(ngModel)]="currentUser.address.zipcode">
+      </div>
+      <h5>Geo: </h5>
+      <div class="form-group">
+        <label for="editlat">Lat</label>
+        <input type="lat" name="lat" class="form-control" id="editlat" aria-describedby="editHelp"
+          placeholder="Enter lat" [(ngModel)]="currentUser.address.geo.lat">
+      </div>
+      <div class="form-group">
+        <label for="editlat">Lng</label>
+        <input type="lng" name="lng" class="form-control" id="editlng" aria-describedby="editHelp"
+          placeholder="Enter lng" [(ngModel)]="currentUser.address.geo.lng">
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-2">
+    <button type="button" [disabled]="saving" id="saveButton" class="btn btn-primary mt-4" (click)="saveAll()">Save
+      All</button>
+  </div>
+
+</div>

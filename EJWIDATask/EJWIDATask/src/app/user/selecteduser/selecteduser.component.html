@@ -1,0 +1,47 @@
+<h4>Detailed Info</h4>
+<p *ngIf="!currentUser">Please select a user</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row bg-light border border-secondary rounded" *ngIf="currentUser">
+      <h5>{{currentUser.name}}</h5>
+      <div class="col-md-10">
+        <ul>
+          <li>Username: {{currentUser.username}}</li>
+          <li>Email: {{currentUser.email}}</li>
+          <li>Company name: {{currentUser.company.name}}</li>
+          <li>Phone: {{currentUser.phone}}</li>
+          <li>Address:
+            <ul>
+              <li>Street: {{currentUser.address.street}}</li>
+              <li>Suite: {{currentUser.address.suite}}</li>
+              <li>City: {{currentUser.address.city}}</li>
+              <li>Zipcode: {{currentUser.address.zipcode}}</li>
+              <li>Geo:
+                <ul>
+                  <li>Lat: {{currentUser.address.geo.lat}}</li>
+                  <li>Lng: {{currentUser.address.geo.lng}}</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 d-flex flex-column justify-content-between mb-4">
+        <button type="button" id="editButton" class="btn btn-warning" (click)="editClicked()">Edit</button>
+        <div
+          class="form-check form-switch d-flex justify-content-center align-items-center text-center bg-warning rounded">
+          <input class="form-check-input" type="checkbox" id="todoButton" [(ngModel)]="todosToggled">
+          <label class="form-check-label" for="todoButton">Show Todos</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6" *ngIf="editC">
+    <app-selected-user-edit [currentUser]="currentUser"></app-selected-user-edit>
+  </div>
+</div>
+<div class="row my-3" *ngIf="todosToggled">
+  <div class="col-md-12">
+    <app-selected-user-todos [currentUser]="currentUser"></app-selected-user-todos>
+  </div>
+</div>
